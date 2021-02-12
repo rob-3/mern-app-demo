@@ -24,7 +24,7 @@ const Book = mongoose.model("books", BookSchema);
 app.post("/api", async (req, res) => {
   const body = req.body;
   const book = new Book(body);
-  await book.save(err => {
+  await book.save(error => {
     if (error) {
       res.status(400);
       res.send("Failed to add a book to the database");
